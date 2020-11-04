@@ -1,0 +1,174 @@
+<script>
+// SECUENCIAL
+function texto( cadena ) {
+  document.write( cadena + "<br>");
+}
+
+function salto () {
+  document.write( "<br> ");
+}
+
+texto (" UNO ");
+texto (" DOS ");
+texto (" TRES ");
+
+texto ( "" );
+texto ( 1 );
+texto ( 2 );
+texto ( 3 );
+salto ();
+
+// ITERACIÓN
+texto("----------------");
+texto ("Iteración");
+texto("----------------");
+
+texto ( "" );
+
+var i = 0;
+while ( i < 10 ) {
+  texto ( i );
+  i = i + 1;
+}
+salto();
+
+// RECURSIVIDAD
+texto("------------------");
+texto("Recursividad");
+texto("------------------");
+
+
+texto ( "" );
+
+function numeros ( a, b ) {
+  var i = a;
+  while ( i <= b ){
+    texto ( i );
+    i = i + 1;
+  }
+}
+
+numeros ( 1, 10 );
+salto();
+numeros ( 7, 16 );
+salto();
+
+// R E C U R S I V I D A DOS
+texto("-------------------------");
+texto("Recursividad Dos");
+texto("-------------------------");
+
+function escribir ( a, b ) {
+  if ( a > b) {
+    return;
+  } else {
+    texto ( a );
+    escribir ( a + 1, b );
+  }
+}
+
+escribir ( 1, 10 );
+salto();
+escribir ( 25, 35 );
+salto ();
+// MULTIPLICACIÓN POR RECURSIVIDAD
+
+/*
+    6 * 4 = 24
+    4 + 4 + 4 + 4 + 4 + 4
+
+    5 * 4 = 20
+        4 + 4 + 4 + 4 + 4
+
+    6 * 4 = 4 + (5 * 4) <======== 
+
+    1 * 4 = 4 
+
+    0 * 4 = 0
+*/
+texto("-----------------------------------------");
+texto("Multiplicación Por Recursividad");
+texto("-----------------------------------------");
+
+
+function multiplicar ( a, b ) {
+  if ( a == 0 ) {
+    return 0;
+  } else {
+    return b + multiplicar ( a - 1, b );
+  }
+}
+
+salto();
+texto ( " 6 * 4 = " );
+resp = multiplicar( 6, 4 );
+
+texto ( resp.toString() );
+salto();
+
+
+// T A L L E R ( recursividad )
+texto("-----------------------------");
+texto("Taller (Recursividad)");
+texto("-----------------------------");
+
+
+//1) factorial ( n ) = n * factorial ( n - 1 );
+texto("1)");
+salto();
+
+function factorial (n) {
+  if (n == 0) {
+    return 1;
+  } else {
+  return   n * factorial (n - 1);
+  }
+}
+
+
+texto("Factorial");
+  res = factorial(prompt("Ingrese un número entero positivo"));
+texto ( res.toString() );
+salto();
+
+
+//2) sumatoria ( 1, n ) = n + sumatoria ( 1, n - 1 );
+texto("-------------");
+texto("2)")
+salto();
+
+
+function sumatoria (a, n) {
+  if (n == 0 ) {
+    return 0;
+  } else {
+    return n + sumatoria (1, n - 1);
+  }
+}
+
+texto ("Sumatoria");
+res = sumatoria(1,5);
+texto (res.toString());
+salto();
+
+
+//3) Calcular x elevado a la y. Ejemplo: 5 elevado a la 3.
+texto("-------------");
+texto("3)");
+salto();
+
+function potencia (x, y, z) {
+  if (y == 1) {
+    return z;
+  } else {
+    return potencia (x , y - 1, x * z);
+  } 
+}
+
+texto (" Potencia");
+res = potencia (2, 8, 2);  //El valor de la variable "x" debe tener el mismo valor que la variable "z",
+                          // es decir si "x" vale dos[2], "z" deberá de tener el mismo valor.
+texto (res.toString());
+salto()
+
+</script>
