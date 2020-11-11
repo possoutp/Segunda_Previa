@@ -1,0 +1,36 @@
+<script type="text/javascript">
+	var lista=[ 1,  30,  6, 5, 40, 2, 3];
+	document.write("Codigo que dice el mayor, el menor elemento de una lista y su promedio.<br>");
+	document.write("La lista es:<br>" + lista);
+    document.write("<br>");
+    document.write ("el mayor es : "+mayor(lista[0],1));
+    document.write("<br>")
+
+    //Funcion para encontrar el mayor
+    function mayor(m,i){
+        
+        if (i>=lista.length) return m;
+        
+        if (lista[i]>m) return mayor(lista[i],i+1);
+       
+        else return mayor(m,i+1);
+    }
+
+    document.write("El menor es:" + menor(lista[0],1));
+    document.write("<br>");
+
+
+    //funcion para encontrar el menor
+    function menor(e,a) {
+    	if(a>=lista.length) return e;
+
+    	if (lista[a]<e) return menor(lista[a],a+1);
+
+    	else return menor(e,a+1)
+    }
+    //codigo para encontrar el promedio
+    var suma = lista.reduce((previus, current) => current += previus);
+    var promedio = suma / lista.length;
+    document.write("El promedio de la lista es:<br>" + promedio);
+
+</script>
