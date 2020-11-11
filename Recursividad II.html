@@ -1,0 +1,92 @@
+<script type="text/javascript">
+	//Esta parte el codigo suma los elementos de una lista iterativamente.
+	function texto ( cadena ) {
+		document.write( cadena );
+	}
+
+	function salto ( numero ) {
+		for(let i = 0; i < numero; i ++) {
+			document.write("<br>")
+			
+		}
+	}
+
+	const numeros = [0,1,2,3,4,5,6,7,8,9];
+
+	let acc = 0;
+	for(let i = 0; i < numeros.length; i ++){
+		acc += numeros[i];
+	}
+	document.write("Sumatoria de los elementos de una lista por iteración:<br>")
+	document.write("La lista es:<br>" + numeros)
+	document.write("<br>")
+	texto ("sumatoria elementos de la lista = " + acc );
+	document.write("<br>")
+	document.write("-------------------------------------------------------------------------------------------");
+	document.write("<br>");
+	
+
+    //Sumar los elementos de una lista por recursión
+	function sumatoria (sum){
+		if(sum.length === 0){
+			return 0;
+		}
+		else{
+			const [first, ...rest] = sum;
+			return first + sumatoria (rest);
+		}
+	}
+    respuesta = sumatoria ([0,1,2,3,4,5,6,7,8,9]);
+	document.write("Sumatoria de una lista por recursión.<br>" + numeros);
+	document.write("<br>");
+    document.write ("Sumatoria de la lista =" + respuesta);
+    document.write("<br>");
+    document.write("----------------------------------------------------------------------------------------");
+    document.write ("<br>");
+
+
+    //Mostrar elementos de una lista
+    document.write ("Mostrar elementos de una lista:<br>");
+    function mostrar (numeros){
+    	if (numeros.length === 0) {
+    		return;
+    	}
+    	else{
+    		const [first, ...rest] = numeros;
+    		document.write (first);
+    		mostrar (rest);
+    	}
+    }
+    lista = [0,1,2,3,4,5,6,7,8,9];
+    mostrar (lista);
+    document.write("<br>");
+    document.write("----------------------------------------------------------------------------------------");
+    document.write("<br>");
+
+
+    //Buscar un elemento de una lista
+    function buscar (dato, lista) {
+    	if (lista.length === 0) {
+    		return false;
+    	}
+    	else {
+    		const [first, ...rest] = lista;
+    		if (first == dato)
+    			return true;
+    		else
+    			return buscar (dato, rest);
+    	}
+    }
+    lista = [0,1,2,3,4,5,6,7,8,9];
+    if ( buscar( 5, lista )) {
+    	document.write ("Encontrado el 5 en la lista<br>");
+    }
+
+    if ( buscar( 28, lista)) {
+    	document.write ("Encontrado el 28 en lista");
+    }
+    else{
+    	document.write ("El 28 no esta en la lista");
+    }
+
+</script>
